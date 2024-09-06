@@ -11,7 +11,7 @@ function App() {
     lastName:"Belo",
     section:"BSCS3A",
     description:"lowkey",})
-    const [moon,setMoon] = useState('moon')
+    const [isMoonUp, setIsMoonUp] = useState(false);
 
 
   function updateName(){
@@ -19,9 +19,9 @@ function App() {
     setUserInformation({...UserInformation})
     return UserInformation;
   }
-   function moveMoon(){
-    setMoon("moonMove")
-   }
+  function toggleMoonPosition() {
+    setIsMoonUp(!isMoonUp);
+  }
   return (
     <div className="App">
       <div className='App'>
@@ -36,12 +36,11 @@ function App() {
         <Description
         description={UserInformation.description}
         />
-        <div className={moon}>
-
+       <div className={isMoonUp ? 'moonUp' : 'moon'}>
         </div>
         <button type='button' onClick={updateName}>updateName</button>
-        <button type='button' onClick={moveMoon}>move the moon</button>
-      </div>
+        <button type="button" onClick={toggleMoonPosition}>Move the Moon</button>
+        </div>
     </div>
   );
 }

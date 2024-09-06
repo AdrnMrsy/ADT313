@@ -34,10 +34,10 @@
   width:150px;
   position: absolute;
   bottom: 0;
-  
+  transition: bottom 2s ease;
 }
 
-.moonMove{
+.moonUp{
   border-radius: 50%;
   background-color: yellow;
   height:150px;
@@ -46,14 +46,11 @@
   animation-name: moon;
   animation-duration: 1s;
   transition: 4s;
-  
-  
+  bottom: calc(100vh - 320px);
+  transition: bottom 2s ease;
 }
-@keyframes moon {
-  0%   {background-color:rgb(243, 245, 241); left:0px; bottom:0px;}
-  25%  {background-color:yellow; left:0px; bottom:10px;}
-  
-}
+
+
 
 @keyframes App-logo-spin {
   from {
