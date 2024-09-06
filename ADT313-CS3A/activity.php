@@ -85,27 +85,30 @@
         
     )
     );
-     $number =count($table['header']);
+    //header loop
+    echo "<tr>";
+foreach ($table['header'] as $header) {
+    echo "<th>$header</th>";
+}
+echo "</tr>";
+    $studentNumber = 1;
+
+
+foreach ($table['body'] as $row) {
+    echo "<tr>";
    
-
+    echo "<td>$studentNumber</td>";
     
+    // add
+    $studentNumber++;
 
+    // all data
+    foreach ($row as $cell) {
+        echo "<td>$cell</td>";
+    }
+    echo "</tr>";
+}
 
-    foreach ($table['header'] as $x) {
-        echo "<tr> $x </tr>";  
-        
-        foreach ($table['body'] as $y) {
-
-            for(x=0; x>= $number; x++){
-                echo "<td> { $table['header']} </td>";
-            }
-              echo "<td>  $y; </td>";  
-
-            
-            
-          }
-      }
-      
      
       
 
