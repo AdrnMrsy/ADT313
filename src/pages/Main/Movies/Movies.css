@@ -1,0 +1,71 @@
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Added to create space between the cards */
+    gap: 20px; /* Maintain space between cards */
+    margin-bottom: 20px; /* Add some margin below the grid */
+}
+
+.movie-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: calc(25% - 20px); /* Set width to 25% for a four-column layout */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Add a transition effect for hover */
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.movie-card img {
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%; /* Ensure the image takes the full width of the card */
+    height: auto; /* Maintain aspect ratio */
+}
+
+h1, h2 {
+    text-align: center; /* Center align the headers */
+}
+
+form {
+    margin-top: 20px; /* Add space above the form */
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for the form */
+}
+
+form div {
+    margin-bottom: 12px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Ensure labels are on their own line */
+    margin-bottom: 6px; /* Space between label and input */
+}
+
+input[type="text"], input[type="date"], input[type="number"], textarea {
+    width: 100%; /* Make inputs take full width */
+    padding: 8px; /* Add padding for better touch target */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in the total width */
+}
+
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%; /* Full width for the button */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
