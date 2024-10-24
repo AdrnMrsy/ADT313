@@ -3,9 +3,12 @@ import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Login from './pages/Public/Login/Login';
-import Register from './pages/Public/Register/Register'; // Import the Register component
 import Dashboard from './pages/Main/Dashboard/Dashboard';
 import Main from './pages/Main/Main';
+import Movie from './pages/Main/Movie/Movie';
+import Lists from './pages/Main/Movie/Lists/Lists';
+import Form from './pages/Main/Movie/Form/Form';
+import Register from './pages/Public/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -13,16 +16,31 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: '/register', // Added route for registration
+    path: '/register',
     element: <Register />,
   },
   {
     path: '/main',
     element: <Main />,
     children: [
+      //Temporarily disabled the dashboard route
+      // {
+      //   path: '/main/dashboard',
+      //   element: <Dashboard />,
+      // },
       {
-        path: '/main/dashboard',
-        element: <Dashboard />,
+        path: '/main/movies',
+        element: <Movie />,
+        children: [
+          {
+            path: '/main/movies',
+            element: <Lists />,
+          },
+          {
+            path: '/main/movies/form/:movieId?',
+            element: <Form />,
+          },
+        ],
       },
     ],
   },

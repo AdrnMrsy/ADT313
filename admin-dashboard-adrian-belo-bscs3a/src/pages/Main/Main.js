@@ -27,6 +27,12 @@ function Main() {
             <li>
               <a href='/main/dashboard'>Dashboard</a>
             </li>
+            <li>
+              <a href='/main/users'>Users</a>
+            </li>
+            <li>
+              <a href='/main/movies'>Movies</a>
+            </li>
             <li className='logout'>
               <a onClick={handleLogout}>Logout</a>
             </li>
